@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scribbl</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+  </style>
+</head>
+<body>
+  <h1>Scribbl</h1>
+  <p>Notetaking made simple.</p>
+
+  <textarea id="notepad" placeholder="Start typing your note..."></textarea>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(() => console.log('✅ Service Worker Registered'))
+        .catch(error => console.error('❌ SW registration failed:', error));
+    }
+
+    // Note saving logic
+    const notepadContent = document.getElementById('notepad');
+    // Load saved note on page load
+    notepadContent.value = localStorage.getItem('scribbl-note') || '';
+    // Save note on every input
+    notepadContent.addEventListener('input', () => {
+      localStorage.setItem('scribbl-note', notepadContent.value);
+    });
+  </script>
+</body>
+</html>
