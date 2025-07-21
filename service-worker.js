@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scribbl-cache-v1.0'; // Increment this on updates
+const CACHE_NAME = 'scribbl-cache-v1.1'; // Increment this on updates
 
 self.addEventListener('install', (e) => {
     console.log('🔧 Installing Service Worker...');
