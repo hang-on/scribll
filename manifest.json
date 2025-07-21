@@ -18,5 +18,15 @@
     }
   ],
   "id": "Scribbl",
-  "description": "A simple notetaking app."
+  "description": "A simple notetaking app.",
+  "categories": [
+    "productivity"
+  ],
+  "dir": "auto",
+  "lang": "da",
+  "orientation": "portrait",
+  "display_override": [
+    "standalone",
+    "window-controls-overlay"
+  ]
 }
