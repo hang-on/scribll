@@ -49,6 +49,31 @@ p {
     background: #f9f9ff;
 }
 
+.header-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+#clear-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#clear-btn:hover, #clear-btn:focus {
+    background: rgba(0, 0, 0, 0.05);
+}
+
 @media (max-width: 600px) {
     #notepad {
         width: 98vw;

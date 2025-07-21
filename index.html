@@ -10,7 +10,12 @@
 
 </head>
 <body>
-  <h1>Scribbl</h1>
+  <div class="header-row">
+    <h1>Scribbl</h1>
+    <button id="clear-btn" title="Clear note">
+      <img src="icons/trashcan_512.png" alt="Clear note" width="28" height="28" />
+    </button>
+  </div>
 
   <textarea id="notepad" placeholder="Start typing your note..."></textarea>
 
@@ -28,6 +33,14 @@
     // Save note on every input
     notepadContent.addEventListener('input', () => {
       localStorage.setItem('scribbl-note', notepadContent.value);
+    });
+
+    // Clear note logic
+    document.getElementById('clear-btn').addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear your note? This cannot be undone.')) {
+        notepadContent.value = '';
+        localStorage.removeItem('scribbl-note');
+      }
     });
   </script>
 </body>
