@@ -4,6 +4,7 @@
         .catch(error => console.error('❌ SW registration failed:', error));
     }
 
+    // Splash screen
     window.addEventListener('load', () => {
       setTimeout(() => {
         const splash = document.getElementById('splash');
