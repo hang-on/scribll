@@ -4,6 +4,16 @@
         .catch(error => console.error('❌ SW registration failed:', error));
     }
 
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const splash = document.getElementById('splash');
+        if (splash) {
+          splash.style.opacity = '0';
+          setTimeout(() => splash.remove(), 600);
+        }
+      }, 1200); // Splash vises i 1.2 sekunder eller indtil assets er loaded
+    });
+
     // Note saving logic
     const notepadContent = document.getElementById('notepad');
     // Load saved note on page load
