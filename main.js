@@ -24,26 +24,11 @@
       localStorage.setItem('scribbl-note', notepadContent.value);
     });
 
-    // Long press to clear note logic
-    let clearTimer = null;
-    function startClearTimer(e) {
-      // Only left mouse button or touch
-      if (e.type === 'mousedown' && e.button !== 0) return;
-      clearTimer = setTimeout(() => {
-        if (confirm('Are you sure you want to clear your note? This cannot be undone.')) {
-          notepadContent.value = '';
-          localStorage.removeItem('scribbl-note');
-        }
-      }, 1000);
+    // When trashcan is clicked, ask if user wants to clear the note.
+    function handleClick(){
+      if (confirm('Are you sure you want to clear your note? This cannot be undone.')) {
+        notepadContent.value = '';
+        localStorage.removeItem('scribbl-note');
+      }
     }
-    function cancelClearTimer() {
-      clearTimeout(clearTimer);
-      clearTimer = null;
-    }
-    notepadContent.addEventListener('mousedown', startClearTimer);
-    notepadContent.addEventListener('touchstart', startClearTimer);
-    notepadContent.addEventListener('mouseup', cancelClearTimer);
-    notepadContent.addEventListener('mouseleave', cancelClearTimer);
-    notepadContent.addEventListener('touchend', cancelClearTimer);
-    notepadContent.addEventListener('touchcancel', cancelClearTimer);
     
