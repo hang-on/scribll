@@ -1,4 +1,4 @@
-const CACHE_NAME = 'scribbl-cache-v1.7'; // Increment this on updates
+const CACHE_NAME = 'scribbl-cache-v1.8'; // Increment this on updates
 
 const ASSETS_TO_CACHE = [
   'index.html',
