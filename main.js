@@ -25,7 +25,7 @@
     });
 
     // When trashcan is clicked, ask if user wants to clear the note.
-    function handleClick(){
+    function clearNote(){
       if (confirm('Are you sure you want to clear your note? This cannot be undone.')) {
         notepadContent.value = '';
         localStorage.removeItem('scribbl-note');
